@@ -2,3 +2,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fluid-horizontal-padding {
+  padding-left: min(1rem, 22vw);
+  padding-right: min(1rem, 22vw);
+}
+
+.body-gradient {
+  background: 
+  radial-gradient(
+    ellipse 50% 500px at top,
+    rgba(59, 130, 246, 0.2) 0%,   /* azul tenue brillante */
+    transparent 100%
+  ),
+  linear-gradient(
+    to bottom,
+    #010c1d,
+    #010c1d
+  );
+}
+
+html, body{
+    scroll-behavior: smooth;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
