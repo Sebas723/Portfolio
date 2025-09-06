@@ -1,0 +1,46 @@
+<nav [ngClass]="isScrolled
+    ? 'w-full h-auto fixed top-0 left-0 flex justify-between items-end py-5 text-white sm:px-6 lg:px-[clamp(1rem,25vw,25rem)] bg-white/5 backdrop-blur-[5px]' 
+    : 'w-full h-auto fixed top-0 left-0 flex justify-between items-end py-5 text-white sm:px-6 lg:px-[clamp(1rem,25vw,25rem)]'">
+            
+    <h1 class="font-bold text-blue-300 transition-all duration-200" [ngClass]="isScrolled ? 'text-3xl' : 'text-4xl'">PortfolioDev</h1>
+    
+    <ul class="hidden xl:flex gap-4">
+        @for( option of navbarItems[0].navbarOptions; track option.id) {
+            <li class="transition-all duration-200" [ngClass]="isScrolled ? 'text-base' : 'text-lg'">{{ option.name }}</li>   
+        }
+    </ul>
+    
+    <div class="hidden xl:flex gap-4">
+        @for( item of navbarItems[0].navbarIcons; track item.id) {
+            <a href="">
+                <i [class]="item.icon" class="text-white" [ngClass]="isScrolled ? 'text-xl' : 'text-2xl'"></i>
+            </a>
+        }
+    </div>
+
+
+    <!-- Opcion de menú dropdown para moviles -->
+    <div class="block xl:hidden relative">
+        <button class="block xl:hidden text-3xl border-none cursor-pointer" aria-label="Menú principal" (click)="toggleMenu()">☰</button>
+
+        <!-- Menú dropdown justo debajo para moviles -->
+        <div [ngClass]="{'flex': menuOpen, 'hidden': !menuOpen}" class="absolute top-full right-0 bg-white/20 backdrop-blur-[5px] flex-col gap-2 p-2 shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg min-w-[160px] z-20">
+            
+            <ul class="text-white text-sm list-none">
+                @for( option of navbarItems[0].navbarOptions; track option.id) {
+                    <li class="cursor-pointer py-3">{{ option.name }}</li>   
+                }
+            </ul>
+
+            <div class="w-full flex gap-3 items-center">
+                @for( item of navbarItems[0].navbarIcons; track item.id) {
+                    <a href="#">
+                        <i [class]="item.icon" class="text-white"></i>
+                    </a>
+                }
+            </div>
+
+        </div>
+    </div>
+</nav>
+
