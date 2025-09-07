@@ -1,6 +1,6 @@
 <nav [ngClass]="isScrolled
-    ? 'w-full h-auto fixed top-0 left-0 flex justify-between items-end py-5 text-white sm:px-6 lg:px-[clamp(1rem,25vw,25rem)] bg-white/5 backdrop-blur-[5px]' 
-    : 'w-full h-auto fixed top-0 left-0 flex justify-between items-end py-5 text-white sm:px-6 lg:px-[clamp(1rem,25vw,25rem)]'">
+    ? 'w-full h-auto fixed top-0 left-0 flex justify-between items-end py-5 text-white sm:px-6 lg:px-[clamp(1rem,25vw,25rem)] bg-white/5 backdrop-blur-[5px] z-20' 
+    : 'w-full h-auto fixed top-0 left-0 flex justify-between items-end py-5 text-white sm:px-6 lg:px-[clamp(1rem,25vw,25rem)] z-20'">
             
     <h1 class="font-bold text-blue-300 transition-all duration-200" [ngClass]="isScrolled ? 'text-3xl' : 'text-4xl'">PortfolioDev</h1>
     

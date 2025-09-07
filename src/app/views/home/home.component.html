@@ -1,0 +1,63 @@
+<section class="w-full flex flex-row justify-between mt-80 lg:px-[clamp(1rem,25vw,25rem)]">
+
+    <!-- Texto -->
+    <div class="w-full flex flex-col gap-1 justify-start">
+        <h1 class="text-4xl text-white font-semibold">Nombre de ejemplo</h1>
+        <p class="text-blue-300 text-xl">Desarrollador de software con enfoque en desarrollo web.</p>
+        <p class="text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur corrupti fuga, at quis quos voluptates 
+            modi neque numquam nam culpa illum voluptatem natus blanditiis libero ut doloribus fugiat odio aperiam porro 
+            quasi error dolore. Aliquam, accusantium nobis, laboriosam aliquid quisquam vero doloribus culpa aut voluptatem
+        </p>
+
+        <div class="w-full flex flex-row gap-4 mt-4">
+            <button class="rounded-lg text-white font-semibold border border-white py-2 px-4">
+                Descargar CV
+            </button>
+            <button class="rounded-lg text-white font-semibold border border-white py-2 px-4">
+                Contactame
+            </button>
+        </div>
+
+        <div class="w-full flex flex-row gap-4 mt-4 text-lg text-white">
+            <div class="flex gap-2 items-center">
+                <i class="pi pi-code text-blue-300"></i>
+                <p>
+                    Desarrollo Frontend
+                </p>
+            </div>
+
+            <div class="flex gap-2 items-center">
+                <i class="pi pi-database text-blue-300"></i>
+                <p>
+                    Desarrollo backend
+                </p>
+            </div>
+
+            <div class="flex gap-2 items-center">
+                <i class="pi pi-palette text-blue-300"></i>
+                <p>
+                    UI/UX
+                </p>
+            </div>
+
+        </div>
+    </div>
+  
+    <!-- Orbitas de planeta -->
+    <div class="relative w-full flex justify-center items-center ml-20">
+
+        <!-- Imagen central -->
+        <img src="images/gallery4.jpg" alt="img" class="w-64 h-64 rounded-full object-cover shadow-lg z-10">
+
+        <!-- Órbitas -->
+        @for( orbit of orbits; track $index) {
+            <div class="absolute w-[520px] h-[150px] rounded-full border shadow-md shadow-blue-300 border-blue-300/30" [ngClass]="orbit.animation"></div>
+        }
+        
+    </div>
+</section>
+
+<div class="absolute flex flex-col gap-8 items-center inset-x-1/2 bottom-10 cursor-pointer animate-move">
+    <i class="pi pi-angle-double-down text-2xl text-blue-300"></i>
+</div>

@@ -6,8 +6,8 @@
 @tailwind utilities;
 
 .fluid-horizontal-padding {
-  padding-left: min(1rem, 22vw);
-  padding-right: min(1rem, 22vw);
+  padding-left: clamp(1rem, 25vw, 25rem);
+  padding-right: clamp(1rem, 25vw, 25rem);
 }
 
 .body-gradient {

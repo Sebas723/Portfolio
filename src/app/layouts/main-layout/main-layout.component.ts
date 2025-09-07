@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from "../../shared/navbar/navbar.component";
+import { HomeComponent } from "../../views/home/home.component";
 
 @Component({
   selector: 'app-main-layout',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, HomeComponent],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css'
 })

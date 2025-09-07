@@ -1,0 +1,50 @@
+@keyframes spin-slow {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  0%   { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes moveY {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(10px); }
+}
+
+.animate-move {
+  animation: moveY 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 18s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spin-slow 6s linear infinite;
+}
+
+.animate-spin-reverse-fast {
+  animation: spin-reverse 10s linear infinite;
+}
+
+.animate-spin-fast-1 {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-reverse-fast-1 {
+  animation: spin-reverse 12s linear infinite;
+}
+
+.animate-spin-fast-2 {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-spin-reverse-fast-2 {
+  animation: spin-reverse 14s linear infinite;
+}
