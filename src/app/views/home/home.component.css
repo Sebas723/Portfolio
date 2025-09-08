@@ -8,15 +8,6 @@
   100% { transform: rotate(0deg); }
 }
 
-@keyframes moveY {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(10px); }
-}
-
-.animate-move {
-  animation: moveY 3s ease-in-out infinite;
-}
-
 .animate-spin-slow {
   animation: spin-slow 12s linear infinite;
 }

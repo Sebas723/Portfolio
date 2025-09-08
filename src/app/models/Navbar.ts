@@ -1,4 +1,4 @@
-export interface NavbarTemplate {
+export interface Navbar {
     navbarOptions: NavbarOptions[];
     navbarIcons: NavbarIcons[];
 }
