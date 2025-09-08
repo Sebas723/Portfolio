@@ -2,7 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //Interfaces
-import { NavbarTemplate } from '../../models/NavbarTemplate';
+import { Navbar } from '../../models/Navbar';
 
 @Component({
   selector: 'app-navbar',
@@ -20,7 +20,7 @@ export class NavbarComponent {
   menuOpen = false;
 
   //Navbar
-  navbarItems: NavbarTemplate[] = [
+  navbarItems: Navbar[] = [
     { 
       navbarOptions: [
         { id: 1, name: 'Inicio', sectionId: '' },
