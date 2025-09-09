@@ -1,0 +1,29 @@
+<section class="flex flex-col gap-8 mt-24 lg:px-[clamp(1rem,25vw,25rem)]">
+    <h2 class="text-4xl text-white font-semibold">Mis habilidades</h2>
+
+    <p class="text-white">        
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minus sequi fugit debitis
+        nisi. Sint incidunt tempore unde consectetur molestiae. Lorem ipsum dolor sit amet 
+        consectetur adipisicing elit. Ad, perspiciatis. Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit. Error, iure labore commodi quae magni excepturi odio minus asperiores porro dignissimos?
+    </p>
+
+    <div class="w-full grid grid-cols-3 gap-4">
+        @for( skill of skillCards; track skill.id ) {
+            <div class="flex flex-col gap-4 items-center skills-gradient p-4 shadow shadow-blue-300/20 rounded-lg">
+                <h4 class="text-blue-300 text-2xl font-semibold">{{ skill.title }}</h4>
+    
+                <div class="flex flex-wrap gap-8 mt-2">
+                    @for( skillItem of skill.tecnologies; track $index ) {
+                        <div class="flex flex-col gap-2 items-center">
+                            <img [src]="skillItem.path" alt="skillItem.name" class="w-16 h-16 object-contain text-white">
+                            <p class="text-white">{{ skillItem.name }}</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<app-scroll-arrow [targetSection]="'my-skills-section'" [marginTop]="'mt-20'"></app-scroll-arrow>

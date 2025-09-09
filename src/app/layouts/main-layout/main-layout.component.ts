@@ -4,10 +4,11 @@ import { HomeComponent } from "../../views/home/home.component";
 import { ExperienceComponent } from "../../views/experience/experience.component";
 import { ProjectsComponent } from "../../views/projects/projects.component";
 import { AboutMeComponent } from "../../views/about-me/about-me.component";
+import { MySkillsComponent } from "../../views/my-skills/my-skills.component";
 
 @Component({
   selector: 'app-main-layout',
-  imports: [NavbarComponent, HomeComponent, ExperienceComponent, ProjectsComponent, AboutMeComponent],
+  imports: [NavbarComponent, HomeComponent, ExperienceComponent, ProjectsComponent, AboutMeComponent, MySkillsComponent],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.css'
 })
