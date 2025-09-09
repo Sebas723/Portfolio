@@ -1,0 +1,13 @@
+.card-gradient {
+  background: 
+  radial-gradient(
+    ellipse 100% 500px at top,
+    rgba(64, 137, 255, 0.466) 0%,   /* azul tenue brillante */
+    transparent 100%
+  ),
+  linear-gradient(
+    to bottom,
+    #010c1d,
+    #010c1d
+  );
+}

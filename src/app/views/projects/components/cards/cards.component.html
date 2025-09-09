@@ -1,0 +1,59 @@
+<div class="grid grid-cols-3 gap-4 mt-6">
+  @for (card of filteredCards; track $index) {
+    <div class="relative rounded-lg overflow-hidden card-gradient">
+
+        <!-- Titulo del filtro -->
+        <div class="absolute flex justify-between w-full z-10">
+            <span class="text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1">{{ card.type }}</span>
+            <span class="pi pi-github text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1"></span>
+        </div>
+
+        <!-- Carrusel -->
+        <div class="relative w-full overflow-hidden">
+            <div class="flex transition-transform duration-700" [style.transform]="'translateX(-' + card.currentIndex * 100 + '%)'">
+                @for(img of card.images; track $index) {
+                    <div class="w-full flex-shrink-0">
+                        <img [src]="img.src" [alt]="img.alt" class="w-full h-full object-cover"/>
+                    </div>
+                }
+            </div>
+
+            <!-- Botones -->
+            <button (click)="prevImage(card)" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 text-white px-2 py-1 rounded-full">
+                <span class="pi pi-angle-left"></span>
+            </button>
+
+            <button (click)="nextImage(card)" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 text-white px-2 py-1 rounded-full">
+                <span class="pi pi-angle-right"></span>
+            </button>
+        </div>
+
+        <!-- Contenido de la tarjeta -->
+        <div class="flex flex-col gap-4 py-6 px-3 text-white">
+            <h4 class="text-blue-300 text-lg font-semibold">Hola mundo</h4>
+
+            <p class="line-clamp-4">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae qui deserunt ipsa optio corporis commodi magnam quod corrupti quae,
+                cum numquam necessitatibus et minima doloremque suscipit expedita dignissimos consequuntur omnis unde voluptatum praesentium. 
+                Perspiciatis, quos sequi molestiae enim corporis rerum!
+            </p>
+
+            <ul class="w-full flex flex-wrap gap-2">
+                <li class="text-[12px] rounded-lg text-white font-semibold border border-white py-1 px-3 block">
+                    JavaScript
+                </li>
+
+                <li class="text-[12px] rounded-lg text-white font-semibold border border-white py-1 px-3 block">
+                    JavaScript
+                </li>
+
+                <li class="text-[12px] rounded-lg text-white font-semibold border border-white py-1 px-3 block">
+                    JavaScript
+                </li>
+            </ul>
+        </div>
+    </div>
+  }
+</div>
+
+<app-scroll-arrow [targetSection]="'projects-section'" [marginTop]="'mt-24'"></app-scroll-arrow>

@@ -1,0 +1,9 @@
+<ul class="flex gap-6 mt-6">
+    @for(  filter of filter; track $index) {            
+        <li (click)="togleFilter(filter.value)" [ngClass]="{ 'border-b-2 border-blue-300 text-blue-300': filterActive === filter.value, 'text-gray-600': filterActive !== filter.value}"
+            class="pb-2 cursor-pointer transition-colors duration-200 hover:text-blue-300"
+        >
+            {{  filter.name }}
+        </li>
+    }
+</ul>
