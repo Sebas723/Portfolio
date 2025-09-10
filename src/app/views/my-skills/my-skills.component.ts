@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 // Componentes
 import { ScrollArrowComponent } from "../../shared/scroll-arrow/scroll-arrow.component";
 
+// Interfaces
+import { Skills } from "../../models/Skills";
+
 @Component({
   selector: 'app-my-skills',
   imports: [ScrollArrowComponent],
@@ -11,7 +14,7 @@ import { ScrollArrowComponent } from "../../shared/scroll-arrow/scroll-arrow.com
 })
 export class MySkillsComponent {
 
-  skillCards = [
+  skillCards: Skills[] = [
     { 
       id: 1,
       title: 'Frontend', 

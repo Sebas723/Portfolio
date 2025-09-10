@@ -1,22 +1,22 @@
-<section class="flex flex-col gap-8 mt-24 lg:px-[clamp(1rem,25vw,25rem)]">
-    <h2 class="text-4xl text-white font-semibold">Mis habilidades</h2>
+<section class="flex flex-col gap-8 mt-24 fluid-horizontal-padding">
+    <h2 class="text-4xl text-white font-semibold">Stack Tecnológico</h2>
 
     <p class="text-white">        
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius minus sequi fugit debitis
-        nisi. Sint incidunt tempore unde consectetur molestiae. Lorem ipsum dolor sit amet 
-        consectetur adipisicing elit. Ad, perspiciatis. Lorem ipsum dolor sit amet consectetur 
-        adipisicing elit. Error, iure labore commodi quae magni excepturi odio minus asperiores porro dignissimos?
+        En mi corta experiencia, tanto en <span class="text-blue-300">proyectos profesionales para organizaciones</span> como
+        en <span class="text-blue-300">iniciativas personales</span> para poner a prueba mis habilidades, he adquirido un <span class="text-blue-300">conocimiento
+        valioso en diversas tecnologías</span>. Por eso, estoy orgulloso de presentar mi <span class="text-blue-300">stack tecnológico</span>, 
+        con el cual desarrollo y fortalezco mis competencias como desarrollador.
     </p>
 
-    <div class="w-full grid grid-cols-3 gap-4">
+    <div class="box-area">
         @for( skill of skillCards; track skill.id ) {
-            <div class="flex flex-col gap-4 items-center skills-gradient p-4 shadow shadow-blue-300/20 rounded-lg">
-                <h4 class="text-blue-300 text-2xl font-semibold">{{ skill.title }}</h4>
+            <div class="flex flex-col gap-4 items-center p-4 pb-10 shadow shadow-blue-300/20 rounded-lg skills-card-gradient">
+                <h3 class="text-blue-300 text-2xl font-semibold">{{ skill.title }}</h3>
     
-                <div class="flex flex-wrap gap-8 mt-2">
+                <div class="grid grid-cols-3 gap-8 mt-2">
                     @for( skillItem of skill.tecnologies; track $index ) {
                         <div class="flex flex-col gap-2 items-center">
-                            <img [src]="skillItem.path" alt="skillItem.name" class="w-16 h-16 object-contain text-white">
+                            <img [src]="skillItem.path" [alt]="skillItem.name" class="w-16 h-16 object-contain text-white">
                             <p class="text-white">{{ skillItem.name }}</p>
                         </div>
                     }
@@ -24,6 +24,17 @@
             </div>
         }
     </div>
+
+    <div class="flex justify-center">
+        <p class="text-white">
+            Un abrazo para 
+            <a href="https://www.youtube.com/@midulive" target="_blank">
+                <span class="text-blue-300 cursor-pointer">Midudev</span>
+            </a> y un agradecimiento especial por
+            sus videos y enseñanzas, que han sido de gran ayuda en mi camino como desarrollador.
+        </p>
+    </div>
 </section>
 
-<app-scroll-arrow [targetSection]="'my-skills-section'" [marginTop]="'mt-20'"></app-scroll-arrow>
+<app-scroll-arrow [targetSection]="'my-skills-section'" [marginTop]="'mt-20'" [rotateIcon]="'rotate-180'"></app-scroll-arrow>
+
