@@ -5,10 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.fluid-horizontal-padding {
-  padding-left: clamp(1rem, 25vw, 25rem);
-  padding-right: clamp(1rem, 25vw, 25rem);
-}
 
 .body-gradient {
   background: 
@@ -31,4 +27,23 @@ html, body{
     padding: 0;
     overflow-x: hidden;
     box-sizing: border-box;
+}
+
+/* Esta es una clase para controlar el margen en la pantalla en las secciones (tambien se puede hacer con clamp()) */
+.fluid-horizontal-padding {
+  padding-inline: 1rem;
+}
+
+/* Este es un media query para que el margen cambie en la pantalla de tablets en las secciones */
+@media (min-width: 768px) {
+  .fluid-horizontal-padding {
+    padding-inline: 5vw;
+  }
+}
+
+/* Este es un media query para que el margen cambie en la pantalla de desktops en las secciones */
+@media (min-width: 1280px) {
+  .fluid-horizontal-padding {
+    padding-inline: 21vw;
+  }
 }

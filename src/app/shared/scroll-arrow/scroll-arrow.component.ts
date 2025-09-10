@@ -9,6 +9,7 @@ import { Component , Input} from '@angular/core';
 export class ScrollArrowComponent {
   @Input() targetSection?: string;
   @Input() marginTop?: string;
+  @Input() rotateIcon?: string;
 
   scrollTo() {
     console.log(this.targetSection);
