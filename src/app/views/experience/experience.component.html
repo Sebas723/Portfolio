@@ -1,4 +1,4 @@
-<section class="flex flex-col gap-8 mt-20 lg:px-[clamp(1rem,25vw,25rem)]">
+<section class="flex flex-col gap-8 mt-20 fluid-horizontal-padding">
 
    <h2 class="text-4xl text-white font-semibold">Experiencia</h2>
 
@@ -20,18 +20,18 @@
                 
                 <!-- Fecha de inicio y fin -->
                 <p class="text-blue-200 text-lg">
-                    <time datetime="2025-01">{{ item.startDate }}</time> - <time datetime="2025-09">{{ item.endDate }}</time>
+                    <time datetime="2024-10">{{ item.startDate }}</time> - <time datetime="2025-01">{{ item.endDate }}</time>
                 </p>
                 
                 <!-- Descripcion -->
-                <p class="text-white">{{ item.description }}</p>
+                <p class="text-white" [innerHTML]="item.description"></p>
     
                 <!-- Tecnologias -->
                 <h4 class="text-blue-200 text-lg">Tecnologias</h4>
-                <ul class="flex flex-row gap-2 mt-2">
+                <ul class="flex flex-wrap gap-2 mt-2">
                     @for(tecnologie of item.technologies; track $index) {
                         <li>
-                            <a [href]="tecnologie.link" class="rounded-lg text-white font-semibold border border-white py-1 px-3 block">
+                            <a [href]="tecnologie.link" target="_blank" class="rounded-lg text-white font-semibold border border-white py-1 px-3 block">
                             {{ tecnologie.name }}
                             </a>
                         </li>
