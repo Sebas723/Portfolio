@@ -1,5 +1,5 @@
 <div class="box-area mt-4">
-  @for (card of filteredCards; track $index) {
+  @for (card of filteredCards; track card.id) {
     <div class="relative rounded-lg overflow-hidden card-gradient">
 
         <!-- Titulo del filtro -->

@@ -1,47 +1,41 @@
-<section class="flex flex-col gap-8 mt-24 lg:px-[clamp(1rem,25vw,25rem)]">
-    <h2 class="text-4xl text-white font-semibold">Sobre mi</h2>
+<section class="flex flex-col gap-8 mt-24 fluid-horizontal-padding">
+    <h2 class="text-4xl text-white font-semibold">Acerca de mi</h2>
 
-    <div class="w-full flex flex-row gap-4">
-        <div class="w-full h-[300px] -rotate-[10deg] border-8 border-b-[40px] border-white shadow-lg shadow-white/20">
-            <img src="images/gallery4.jpg" alt="img" class="w-full h-full object-cover">
-        </div>
-
-        <div class="w-full h-[300px] rotate-12 border-8 border-b-[40px] border-white shadow-lg shadow-white/20">
-            <img src="images/gallery5.png" alt="img" class="w-full h-full object-cover">
-        </div>
-
-        <div class="w-full h-[300px] -rotate-[20deg] border-8 border-b-[40px] border-white shadow-lg shadow-white/20">
-            <img src="images/gallery4.jpg" alt="img" class="w-full h-full object-cover">
-        </div>
+    <div class="w-full flex flex-row img-display">
+        @for( img of aboutMeImages; track img.id) {
+            <div class="w-full max-w-[400px] h-[300px] border-8 border-b-[40px] border-white shadow-lg shadow-white/20" [class]="img.rotate">
+                <img [src]="img.src" [alt]="img.alt" class="w-full h-full object-cover">
+            </div>
+        }
     </div>
 
     <div class="flex flex-col gap-4 mt-16 text-white">
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aperiam harum cupiditate, voluptates repudiandae nemo 
-            libero ipsam consectetur nostrum! Doloremque accusantium voluptatem inventore molestiae, eaque accusamus dolore ex 
-            praesentium rerum tempora rem laboriosam at facilis quas maxime. Provident nesciunt magni, omnis eveniet ad laboriosam, 
-            eos, ut vel ea hic aut.
+            Hola a todos, mi nombre es <span class="text-blue-300">Sebastian Ramirez Henao</span> y soy un <span class="text-blue-300">desarrollador junior</span>
+            con enfoque en el <span class="text-blue-300">desarrollo de plataformas web</span>. Me apasiona tanto la <span class="text-blue-300">programación</span>
+            como la <span class="text-blue-300">etapa de planeación de proyectos</span>, ya que considero que ambas se entrelazan
+            de una manera fundamental para dar vida a <span class="text-blue-300">soluciones digitales</span> que <span class="text-blue-300">cubran necesidades reales</span>.  
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aperiam harum cupiditate, voluptates repudiandae nemo 
-            libero ipsam consectetur nostrum! Doloremque accusantium voluptatem inventore molestiae, eaque accusamus dolore ex 
-            praesentium rerum tempora rem laboriosam at facilis quas maxime. Provident nesciunt magni, omnis eveniet ad laboriosam, 
-            eos, ut vel ea hic aut.
+            Durante mis experiencias, <span class="text-blue-300">tanto formales como informales</span>, he participado en equipos
+            de desarrollo enfocados en la creación de proyectos con <span class="text-blue-300">valor y calidad para el mercado</span>. 
+            En la mayoría de estos, he desempeñado un rol principalmente como <span class="text-blue-300">desarrollador frontend</span>,
+            aunque también he tenido la oportunidad de involucrarme en <span class="text-blue-300">pequeñas tareas de backend</span>, lo que me 
+            ha permitido comprender mejor el ciclo completo del desarrollo.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aperiam harum cupiditate, voluptates repudiandae nemo 
-            libero ipsam consectetur nostrum! Doloremque accusantium voluptatem inventore molestiae, eaque accusamus dolore ex 
-            praesentium rerum tempora rem laboriosam at facilis quas maxime. Provident nesciunt magni, omnis eveniet ad laboriosam, 
-            eos, ut vel ea hic aut.
+            Me considero una persona con <span class="text-blue-300">hambre de conocimiento</span>, siempre dispuesta a aprender y a compartir lo que sé.
+            En mi tiempo libre disfruto de <span class="text-blue-300">ver películas y series, escuchar música, jugar videojuegos</span>, además de 
+            <span class="text-blue-300">desarrollar proyectos personales</span> o investigar nuevas tecnologías que me ayuden a crecer en mi camino para convertirme
+            en un desarrollador senior.
         </p>
 
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam aperiam harum cupiditate, voluptates repudiandae nemo 
-            libero ipsam consectetur nostrum! Doloremque accusantium voluptatem inventore molestiae, eaque accusamus dolore ex 
-            praesentium rerum tempora rem laboriosam at facilis quas maxime. Provident nesciunt magni, omnis eveniet ad laboriosam, 
-            eos, ut vel ea hic aut.
+            Mi objetivo es seguir perfeccionando mis habilidades técnicas y profesionales para integrarme en equipos
+            donde pueda <span class="text-blue-300">aportar soluciones innovadoras, aprender de otros profesionales</span> y contribuir al
+            desarrollo de <span class="text-blue-300">productos digitales que impacten positivamente en la sociedad</span>.
         </p>
     </div>
 </section>
