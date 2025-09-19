@@ -42,7 +42,7 @@ html, body{
 }
 
 /* Este es un media query para que el margen cambie en la pantalla de desktops en las secciones */
-@media (min-width: 1280px) {
+@media (min-width: 1100px) {
   .fluid-horizontal-padding {
     padding-inline: 21vw;
   }

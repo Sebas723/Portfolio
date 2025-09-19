@@ -11,3 +11,22 @@
     #010c1d
   );
 }
+
+.box-area {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+@media (min-width: 680px) {
+  .box-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 1400px) {
+  .box-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
