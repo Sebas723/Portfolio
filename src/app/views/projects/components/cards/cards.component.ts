@@ -6,6 +6,9 @@ import { ScrollArrowComponent } from "../../../../shared/scroll-arrow/scroll-arr
 // Services
 import { FilterService } from '../../services/filter.service';
 
+// Interfaces
+import { Projects } from '../../../../models/Projects';
+
 @Component({
   selector: 'app-cards',
   imports: [ScrollArrowComponent],
@@ -16,8 +19,9 @@ export class CardsComponent {
   
   filterActive = 'Todos';
 
-  cards = [
-    { 
+  cards: Projects[] = [
+    {
+      id: 1, 
       type: 'Fullstack',
       status: 'En desarrollo',
       github: 'https://github.com/Sebas723/Emprendev-Angular',
@@ -44,7 +48,8 @@ export class CardsComponent {
       ],
       currentIndex: 0 
     },
-    { 
+    {
+      id: 2, 
       type: 'Frontend',
       status: 'Terminado',
       images: [
@@ -67,7 +72,8 @@ export class CardsComponent {
       ],
       currentIndex: 0 
     },
-    { 
+    {
+      id: 3, 
       type: 'FullStack',
       status: 'Terminado',
       images: [
