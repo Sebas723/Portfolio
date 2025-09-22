@@ -1,41 +1,18 @@
-@keyframes spin-slow {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+/* Esta es una clase para controlar el margen en la pantalla en las secciones (tambien se puede hacer con clamp()) */
+.fluid-horizontal-home-padding {
+  padding-inline: 1rem;
 }
 
-@keyframes spin-reverse {
-  0%   { transform: rotate(360deg); }
-  100% { transform: rotate(0deg); }
+/* Este es un media query para que el margen cambie en la pantalla de tablets en las secciones */
+@media (min-width: 768px) {
+  .fluid-horizontal-home-padding {
+    padding-inline: 5vw;
+  }
 }
 
-.animate-spin-slow {
-  animation: spin-slow 12s linear infinite;
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse 18s linear infinite;
-}
-
-.animate-spin-fast {
-  animation: spin-slow 6s linear infinite;
-}
-
-.animate-spin-reverse-fast {
-  animation: spin-reverse 10s linear infinite;
-}
-
-.animate-spin-fast-1 {
-  animation: spin-slow 8s linear infinite;
-}
-
-.animate-spin-reverse-fast-1 {
-  animation: spin-reverse 12s linear infinite;
-}
-
-.animate-spin-fast-2 {
-  animation: spin-slow 10s linear infinite;
-}
-
-.animate-spin-reverse-fast-2 {
-  animation: spin-reverse 14s linear infinite;
+/* Este es un media query para que el margen cambie en la pantalla de desktops en las secciones */
+@media (min-width: 1100px) {
+  .fluid-horizontal-home-padding {
+    padding-inline: 24vw;
+  }
 }

@@ -10,14 +10,9 @@ import { ScrollArrowComponent } from "../../shared/scroll-arrow/scroll-arrow.com
 })
 export class HomeComponent {
 
-  orbits = [
-    { animation: 'animate-spin-slow' },
-    { animation: 'animate-spin-reverse' },
-    { animation: 'animate-spin-fast' },
-    { animation: 'animate-spin-reverse-fast' },
-    { animation: 'animate-spin-fast-1' },
-    { animation: 'animate-spin-reverse-fast-1' },
-    { animation: 'animate-spin-fast-2' },
-    { animation: 'animate-spin-reverse-fast-2' }
+  skills = [
+    { icon: 'pi pi-code', label: 'Desarrollo Web' },
+    { icon: 'pi pi-database', label: 'Desarrollo backend' },
+    { icon: 'pi pi-palette', label: 'UI/UX' }
   ]
 }
