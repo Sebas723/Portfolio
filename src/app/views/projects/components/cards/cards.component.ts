@@ -74,7 +74,7 @@ export class CardsComponent {
     },
     {
       id: 3, 
-      type: 'FullStack',
+      type: 'Fullstack',
       status: 'Terminado',
       images: [
         { src: 'images/NOVA/no-disponible.jpg', alt: 'img-no-disponible' },

@@ -52,6 +52,15 @@
         </div>
     </div>
   }
+
 </div>
+@if(filteredCards.length === 0) {
+  <div class="w-full flex flex-col">
+    <h1 class="text-blue-300 text-xl font-semibold">No hay proyectos disponibles por ahora.</h1>
+    <p class="text-white">
+      Estoy trabajando en nuevas ideas que pronto podrás ver por aquí. ¡Gracias por tu interés!
+    </p>
+  </div>
+}
 
 <app-scroll-arrow [targetSection]="'projects-section'" [marginTop]="'mt-24'"></app-scroll-arrow>
