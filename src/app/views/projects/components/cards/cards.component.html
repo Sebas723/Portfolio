@@ -35,25 +35,30 @@
         </div>
 
         <!-- Contenido de la tarjeta -->
-        <div class="flex flex-col gap-2 py-6 px-3 text-white">
+        <div class="flex flex-col gap-3 py-6 px-3 text-white">
             <h4 class="text-blue-300 text-xl font-semibold">{{ card.title }}</h4>
-
-            <p class="line-clamp-5">
-                {{ card.description }}
-            </p>
+            
+            <div>
+                <p class="line-clamp-5">
+                    {{ card.description }}
+                </p>
+                <span (click)="openModal(card)" class="text-blue-300 cursor-pointer">Ver mas</span>
+            </div>
 
             <ul class="w-full flex flex-wrap gap-2">
                 @for(tech of card.tecnologies; track $index) {
-                    <li class="text-[12px] rounded-lg text-white font-semibold border border-white py-1 px-3 block">
-                        {{ tech.name }}
+                    <li class="text-[12px] rounded-lg text-white font-semibold border border-white py-1 px-3 block hover:bg-white/30 hover:duration-500">
+                        <a [href]="tech.link" target="_blank">
+                            {{ tech.name }}
+                        </a>
                     </li>
                 }
             </ul>
         </div>
     </div>
   }
-
 </div>
+
 @if(filteredCards.length === 0) {
   <div class="w-full flex flex-col">
     <h1 class="text-blue-300 text-xl font-semibold">No hay proyectos disponibles por ahora.</h1>
@@ -62,5 +67,12 @@
     </p>
   </div>
 }
+
+<!--Modal-->
+<app-modal-card  
+    *ngIf="selectedCard"
+    [card]="selectedCard"
+    (close)="closeModal()">
+</app-modal-card>
 
 <app-scroll-arrow [targetSection]="'projects-section'" [marginTop]="'mt-24'"></app-scroll-arrow>
