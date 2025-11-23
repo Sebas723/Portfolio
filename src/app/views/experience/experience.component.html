@@ -29,10 +29,10 @@
                 <!-- Tecnologias -->
                 <h4 class="text-blue-200 text-lg">Tecnologias</h4>
                 <ul class="flex flex-wrap gap-2 mt-2">
-                    @for(tecnologie of item.technologies; track $index) {
-                        <li>
-                            <a [href]="tecnologie.link" target="_blank" class="rounded-lg text-white font-semibold border border-white py-1 px-3 block">
-                            {{ tecnologie.name }}
+                    @for(tech of item.technologies; track $index) {
+                        <li class="rounded-lg text-white font-semibold border border-white py-1 px-3 block hover:bg-white/30 hover:duration-500">
+                            <a [href]="tech.link" target="_blank">
+                                {{ tech.name }}
                             </a>
                         </li>
                     }

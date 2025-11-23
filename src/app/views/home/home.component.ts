@@ -12,7 +12,7 @@ export class HomeComponent {
 
   skills = [
     { icon: 'pi pi-code', label: 'Desarrollo Frontend' },
-    { icon: 'pi pi-database', label: 'Desarrollo backend' },
+    // { icon: 'pi pi-database', label: 'Desarrollo backend' },
     { icon: 'pi pi-palette', label: 'UI/UX' }
   ]
 }

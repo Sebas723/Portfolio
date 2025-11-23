@@ -6,7 +6,7 @@ export interface Projects {
     images: Image[];
     title: string;
     description: string;
-    tecnologies: Tecnology[];
+    tecnologies: Technology[];
     currentIndex: number;
 }
 
@@ -15,6 +15,7 @@ interface Image {
     alt: string;
 }
 
-interface Tecnology {
+interface Technology {
     name: string;
+    link: string;
 }

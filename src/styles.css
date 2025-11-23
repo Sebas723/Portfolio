@@ -10,7 +10,7 @@
   background: 
   radial-gradient(
     ellipse 50% 500px at top,
-    rgba(59, 130, 246, 0.2) 0%,   /* azul tenue brillante */
+    rgba(59, 130, 246, 0.2) 0%,
     transparent 100%
   ),
   linear-gradient(
@@ -32,6 +32,20 @@ html, body{
 /* Esta es una clase para controlar el margen en la pantalla en las secciones (tambien se puede hacer con clamp()) */
 .fluid-horizontal-padding {
   padding-inline: 1rem;
+}
+
+/* Scroll Personalizado */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #010c1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #93C5FD;
+  border-radius: 9999px;
 }
 
 /* Este es un media query para que el margen cambie en la pantalla de tablets en las secciones */

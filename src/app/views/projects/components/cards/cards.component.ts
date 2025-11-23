@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 // Componentes
 import { ScrollArrowComponent } from "../../../../shared/scroll-arrow/scroll-arrow.component";
@@ -8,16 +9,18 @@ import { FilterService } from '../../services/filter.service';
 
 // Interfaces
 import { Projects } from '../../../../models/Projects';
+import { ModalCardComponent } from "./modal-card/modal-card.component";
 
 @Component({
   selector: 'app-cards',
-  imports: [ScrollArrowComponent],
+  imports: [ScrollArrowComponent, ModalCardComponent, CommonModule],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })
-export class CardsComponent {
+export class CardsComponent implements OnInit {
   
   filterActive = 'Todos';
+  selectedCard: Projects | null = null;
 
   cards: Projects[] = [
     {
@@ -36,15 +39,15 @@ export class CardsComponent {
         donde las pequeñas y medianas empresas pueden publicar ofertas laborales y los 
         profesionales de tecnología mostrar sus perfiles.`,
       tecnologies: [
-        { name: 'Angular' },
-        { name: 'TypeScript' },
-        { name: 'Tailwind CSS' },
-        { name: 'SpringBoot' },
-        { name: 'MariaDB' },
-        { name: 'PhpMyAdmin' },
-        { name: 'XAMPP' },
-        { name: 'Git' },
-        { name: 'GitHub' },
+        { name: 'Angular', link: 'https://angular.dev/' },
+        { name: 'TypeScript', link: 'https://www.typescriptlang.org/' },
+        { name: 'Tailwind CSS', link: 'https://tailwindcss.com/' },
+        { name: 'SpringBoot', link: 'https://spring.io/projects/spring-boot' },
+        { name: 'MariaDB', link: 'https://mariadb.org/' },
+        { name: 'PhpMyAdmin', link: 'https://www.phpmyadmin.net/' },
+        { name: 'XAMPP', link: 'https://www.apachefriends.org/es/index.html' },
+        { name: 'Git', link: 'https://git-scm.com/' },
+        { name: 'GitHub', link: 'https://github.com/' },
       ],
       currentIndex: 0 
     },
@@ -61,14 +64,14 @@ export class CardsComponent {
         y visualización de la información de los asociados. Anteriormente, este proceso se realizaba mediante
         archivos de Excel, lo que dificultaba el acceso a la información, reducía su claridad y aumentaba el riesgo de pérdida de datos.`,
       tecnologies: [
-        { name: 'Angular' },
-        { name: 'TypeScript' },
-        { name: 'PrimeNG' },
-        { name: 'PrimeFlex' },
-        { name: 'SpringBoot' },
-        { name: 'PostgreSQL' },
-        { name: 'Git' },
-        { name: 'GitHub' },
+        { name: 'Angular', link: 'https://angular.dev/' },
+        { name: 'TypeScript', link: 'https://www.typescriptlang.org/' },
+        { name: 'PrimeNG', link: 'https://primeng.org/' },
+        { name: 'PrimeFlex', link: 'https://primeflex.org/' },
+        { name: 'SpringBoot', link: 'https://spring.io/projects/spring-boot' },
+        { name: 'PostgreSQL', link: 'https://www.postgresql.org/' },
+        { name: 'Git', link: 'https://git-scm.com/' },
+        { name: 'GitHub', link: 'https://github.com/' },
       ],
       currentIndex: 0 
     },
@@ -84,13 +87,13 @@ export class CardsComponent {
         El objetivo del proyecto es centralizar múltiples aplicaciones bancarias junto con sus respectivas reglas de negocio, 
         permitiendo a los equipos de desarrollo visualizar, crear, desactivar y editar dichas reglas de forma sencilla y en tiempo real.`,
       tecnologies: [
-        { name: 'Angular' },
-        { name: 'TypeScript' },
-        { name: 'PrimeNG' },
-        { name: 'PrimeFlex' },
-        { name: 'AWS Cognito' },
-        { name: 'Git' },
-        { name: 'GitHub' },
+        { name: 'Angular', link: 'https://angular.dev/' },
+        { name: 'TypeScript', link: 'https://www.typescriptlang.org/' },
+        { name: 'PrimeNG', link: 'https://primeng.org/' },
+        { name: 'PrimeFlex', link: 'https://primeflex.org/' },
+        { name: 'AWS Cognito', link: 'https://aws.amazon.com/es/cognito/' },
+        { name: 'Git', link: 'https://git-scm.com/' },
+        { name: 'GitHub', link: 'https://github.com/' },
       ],
       currentIndex: 0 
     },
@@ -100,13 +103,7 @@ export class CardsComponent {
     this.filterService.filter$.subscribe(value => this.filterActive = value);
   }
 
-  get filteredCards() {
-    return this.filterActive === 'Todos'
-      ? this.cards
-      : this.cards.filter(c => c.type === this.filterActive);
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     setInterval(() => {
       this.cards.forEach(card => {
         card.currentIndex = (card.currentIndex + 1) % card.images.length;
@@ -114,12 +111,28 @@ export class CardsComponent {
     }, 6000);
   }
 
-  nextImage(card: any) {
+  get filteredCards(): Projects[] {
+    return this.filterActive === 'Todos'
+      ? this.cards
+      : this.cards.filter(c => c.type === this.filterActive);
+  }
+
+  nextImage(card: any): void {
     card.currentIndex = (card.currentIndex + 1) % card.images.length;
   }
 
-  prevImage(card: any) {
+  prevImage(card: any): void {
     card.currentIndex =
       (card.currentIndex - 1 + card.images.length) % card.images.length;
+  }
+
+  openModal(card: Projects): void {
+    this.selectedCard = card;
+    document.documentElement.classList.add('overflow-hidden');
+  }
+
+  closeModal() {
+    this.selectedCard = null;
+    document.documentElement.classList.remove('overflow-hidden');
   }
 }
