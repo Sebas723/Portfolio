@@ -33,11 +33,18 @@ export class CardsComponent implements OnInit {
         { src: 'images/emprendev/image3.png', alt: 'img-emprendev-catalog' },
         { src: 'images/emprendev/image4.png', alt: 'img-emprendev-create-offer' },
       ],
+      videos: [
+        { src: 'videos/emprendev/emprendev_video.mp4'},
+      ],
       title: 'Emprendev', 
       description: `
         Emprendev es una solución que conecta a mipymes con desarrolladores, creando un espacio
         donde las pequeñas y medianas empresas pueden publicar ofertas laborales y los 
         profesionales de tecnología mostrar sus perfiles.`,
+      keyContributions: [
+        { contribution: `Desarrollé y optimicé componentes provenientes de un proyecto legacy construido en HTML,
+          JavaScript y CSS, migrando sus funcionalidades hacia tecnologías modernas como Angular y Tailwind CSS.` },
+      ],
       tecnologies: [
         { name: 'Angular', link: 'https://angular.dev/' },
         { name: 'TypeScript', link: 'https://www.typescriptlang.org/' },
@@ -49,7 +56,8 @@ export class CardsComponent implements OnInit {
         { name: 'Git', link: 'https://git-scm.com/' },
         { name: 'GitHub', link: 'https://github.com/' },
       ],
-      currentIndex: 0 
+      currentIndex: 0,
+      urlOnlineProject: 'https://github.com/Sebas723/Emprendev-Angular',
     },
     {
       id: 2, 
@@ -63,6 +71,12 @@ export class CardsComponent implements OnInit {
         SAGA es una iniciativa interna de Tata Consultancy Services diseñada para optimizar la recolección
         y visualización de la información de los asociados. Anteriormente, este proceso se realizaba mediante
         archivos de Excel, lo que dificultaba el acceso a la información, reducía su claridad y aumentaba el riesgo de pérdida de datos.`,
+      keyContributions: [
+        { contribution: 'Desarrollé y mejoré componentes de interfaz de usuario con Angular, PrimeNG y PrimeFlex, priorizando un diseño UX/UI limpio.' },
+        { contribution: 'Apliqué principios de Clean Code y creé componentes modulares y reutilizables para mejorar la escalabilidad y mantenibilidad.' },
+        { contribution: 'Apoyé en la integración con el backend utilizando Spring Boot y PostgreSQL.' },
+        { contribution: 'Trabajé dentro de un marco ágil SCRUM, participando en daily, sprint planning y retrospectivas.' },
+      ],
       tecnologies: [
         { name: 'Angular', link: 'https://angular.dev/' },
         { name: 'TypeScript', link: 'https://www.typescriptlang.org/' },
