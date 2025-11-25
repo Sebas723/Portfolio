@@ -15,13 +15,4 @@ export class ModalCardComponent {
     this.close.emit();
   }
 
-  nextImage(card: any): void {
-    card.currentIndex = (card.currentIndex + 1) % card.images.length;
-  }
-
-  prevImage(card: any): void {
-    card.currentIndex =
-      (card.currentIndex - 1 + card.images.length) % card.images.length;
-  }
-
 }

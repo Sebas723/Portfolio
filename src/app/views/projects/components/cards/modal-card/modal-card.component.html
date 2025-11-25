@@ -1,45 +1,60 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
 
-    <div class="w-10/12 max-w-6xl lg:h-[420px] flex gap-2 shadow shadow-blue-300/20 modal-card-gradient">
+    <div class="max-w-2xl h-full max-h-[700px] flex flex-col shadow shadow-blue-300/20 rounded-lg modal-card-gradient overflow-y-auto">
+        <!-- Video -->
+        <div class="relative">
+            <div class="absolute flex justify-between w-full z-10">
+                <div class="flex justify-between">
+                    <span class="text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1">{{ card.type }}</span>
+                    <span class="text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1">{{ card.status }}</span>
+                </div>
 
-        <!-- Carrusel -->
-        <div class="relative w-8/12 overflow-hidden">
-            <div class="flex transition-transform duration-700" [style.transform]="'translateX(-' + card.currentIndex * 100 + '%)'">
-                @for(img of card.images; track $index) {
-                    <div class="w-full flex-shrink-0">
-                        <img [src]="img.src" [alt]="img.alt" class="w-full h-[350px] lg:h-[420px] object-fill"/>
-                    </div>
-                }
-            </div>
-
-            <!-- Botones para el carrusel -->
-            <button (click)="prevImage(card)" class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/40 text-white px-2 py-1 rounded-full">
-                <span class="pi pi-angle-left"></span>
-            </button>
-
-            <button (click)="nextImage(card)" class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/40 text-white px-2 py-1 rounded-full">
-                <span class="pi pi-angle-right"></span>
-            </button>
-        </div>
-        
-        <div class="w-6/12 flex flex-col gap-4 px-2 py-1">
-            <!-- Header -->
-            <div class="flex justify-between items-center">
-                <h3 class="text-blue-300 text-xl font-semibold">{{ card.title }}</h3>
-                <button class="text-white text-lg hover:text-gray-400 duration-500" (click)="closeModal()">
+                <button class="text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1" (click)="closeModal()">
                     ✕
                 </button>
             </div>
+            @if(card.videos) {
+                @for( video of card.videos; track $index) {
+
+                    <video
+                        [src]="video.src"
+                        autoplay
+                        controls
+                        loop
+                        muted
+                        playsinline
+                        class="w-full h-full object-cover"
+                    ></video>
+                }
+            } @else {
+                @for( image of card.images; track $index) {
+                    <img [src]="image.src" [alt]="image.alt" class="w-full h-full object-cover"/>
+                }
+            }
+        </div>
+        
+        <div class="flex flex-col gap-3 px-2 py-1">
+            
+            <h3 class="text-blue-300 text-xl font-semibold">{{ card.title }}</h3>
 
             <!-- Body -->
-            <div class="flex flex-col gap-4 overflow-y-auto">
+            <div class="flex flex-col gap-4 [&>div]:flex [&>div]:flex-col [&>div]:gap-3">
                 <p class="text-white"> 
                     {{ card.description }}
                 </p>
+                
+                <div>
+                    <h3 class="text-blue-300 text-xl font-semibold">Contribuciones clave</h3>
+                    <ul class="list-disc pl-5">
+                        @for(keyContribution of card.keyContributions; track $index) {
+                            <li class="text-white"> {{ keyContribution.contribution }} </li>
+                        }
+                    </ul>
+                </div>
 
                 <div>
                     <h3 class="text-blue-300 text-xl font-semibold">Tecnologías</h3>
-                    <ul class="w-full flex flex-wrap gap-2 mt-4">
+                    <ul class="w-full flex flex-wrap gap-2">
                         @for(tech of card.tecnologies; track $index) {
                             <li class="text-[12px] rounded-lg text-white font-semibold border border-white py-1 px-3 block hover:bg-white/30 hover:duration-500">
                                 <a [href]="tech.link" target="_blank">
@@ -53,15 +68,18 @@
             </div>
 
             <!-- Footer -->
-            <div class="flex justify-between gap-4 mt-auto mb-2">
-                <button class="w-full rounded-lg text-white font-semibold border border-white py-2 px-4 hover:bg-white/30 hover:duration-500">
-                    Ver Proyecto
-                </button>
-                <button class="w-full rounded-lg text-black bg-white font-semibold py-2 px-4 hover:bg-gray-400 duration-500" (click)="closeModal()">
+            <div class="flex justify-center gap-4 mt-auto mb-2">
+                @if(card.urlOnlineProject) {
+                    <button class="w-5/12 rounded-lg text-white font-semibold border border-white py-2 px-4 hover:bg-white/30 hover:duration-500">
+                        Ver Proyecto
+                    </button>
+                }
+                <button class="w-5/12 rounded-lg text-black bg-white font-semibold py-2 px-4 hover:bg-gray-400 duration-500" (click)="closeModal()">
                     Cerrar
                 </button>
             </div>
         </div>
+        
     </div>
 </div>
 

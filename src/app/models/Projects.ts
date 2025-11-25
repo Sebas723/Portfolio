@@ -4,10 +4,13 @@ export interface Projects {
     status: string;
     github?: string;
     images: Image[];
+    videos?: Video[];
     title: string;
     description: string;
+    keyContributions?: KeyContribution[];
     tecnologies: Technology[];
     currentIndex: number;
+    urlOnlineProject?: string;
 }
 
 interface Image {
@@ -15,7 +18,15 @@ interface Image {
     alt: string;
 }
 
+interface Video {
+    src: string;
+}
+
 interface Technology {
     name: string;
     link: string;
+}
+
+interface KeyContribution {
+    contribution: string;
 }
