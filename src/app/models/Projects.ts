@@ -6,7 +6,7 @@ export interface Projects {
     images: Image[];
     videos?: Video[];
     title: string;
-    description: string;
+    description: string[];
     keyContributions?: KeyContribution[];
     tecnologies: Technology[];
     currentIndex: number;

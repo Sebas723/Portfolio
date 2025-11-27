@@ -9,9 +9,11 @@
                 <span class="text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1">{{ card.status }}</span>
             </div>
 
-            <a [href]="card.github" target="_blank">
-                <span class="pi pi-github text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1"></span>
-            </a>
+            @if(card.github) {
+                <a [href]="card.github" target="_blank">
+                    <span class="pi pi-github text-white text-sm bg-gray-400/40 backdrop-blur-[5px] rounded-lg m-2 px-2 py-1"></span>
+                </a>
+            }
         </div>
 
         <!-- Carrusel -->
