@@ -14,19 +14,19 @@ export class AboutMeComponent {
     {
       id: 1,
       rotate: '-rotate-[10deg]',
-      src: 'images/gallery4.jpg',
+      src: 'images/my-images/foto-portfolio-1.png',
       alt: 'img'
     },
     {
       id: 2,
       rotate: 'rotate-12',
-      src: 'images/gallery5.png',
+      src: 'images/my-images/foto-portfolio-2.png',
       alt: 'img'
     },
     {
       id: 3,
       rotate: '-rotate-[20deg]',
-      src: 'images/gallery4.jpg',
+      src: 'images/my-images/foto-portfolio-3.png',
       alt: 'img'
     },
   ]

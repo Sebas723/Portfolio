@@ -4,7 +4,7 @@
     <div class="w-full flex flex-row img-display">
         @for( img of aboutMeImages; track img.id) {
             <div class="w-full max-w-[400px] h-[300px] border-8 border-b-[40px] border-white shadow-lg shadow-white/20" [class]="img.rotate">
-                <img [src]="img.src" [alt]="img.alt" class="w-full h-full object-cover">
+                <img [src]="img.src" [alt]="img.alt" class="h-full w-full object-cover object-[0%_5%]">
             </div>
         }
     </div>
